@@ -2,6 +2,7 @@ import "@/styles/globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { GeistSans } from "geist/font/sans";
 import { type Metadata } from "next";
+import SiteNav from "@/components/site-nav";
 
 export const metadata: Metadata = {
   title: "Create T3 App",
@@ -14,7 +15,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${GeistSans.variable}`}>
-      <body>
+      <body className="">
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"

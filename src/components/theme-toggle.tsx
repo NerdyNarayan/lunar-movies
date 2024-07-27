@@ -11,7 +11,10 @@ const ThemeToggle = () => {
   const { setTheme } = useTheme();
   const [toggle, setToggle] = useState(false);
   return (
-    <Button className="rounded-lg px-3 py-2" onClick={() => Toggle()}>
+    <Button
+      className="rounded-lg border bg-transparent px-3 py-2 text-primary hover:text-primary-foreground"
+      onClick={() => Toggle()}
+    >
       {toggle ? <FaSun /> : <FaMoon />}
     </Button>
   );
