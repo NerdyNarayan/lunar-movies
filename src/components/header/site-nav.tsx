@@ -1,18 +1,21 @@
-"use client";
+"use client"
 
-import { useActiveNav } from "@/hooks/useActiveNav";
-import { type NavItem, navItems } from "../../config/site";
-import { GiEclipseFlare } from "react-icons/gi";
+import Link from "next/link"
+import { GiEclipseFlare } from "react-icons/gi"
+
+import { cn } from "@/lib/utils"
+import { useActiveNav } from "@/hooks/useActiveNav"
 import {
   NavigationMenu,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
   navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu";
-import Link from "next/link";
-import { cn } from "@/lib/utils";
-import ThemeToggle from "../theme-toggle";
+} from "@/components/ui/navigation-menu"
+
+import { navItems, type NavItem } from "../../config/site"
+import ThemeToggle from "../theme-toggle"
+
 const SiteNav = () => {
   return (
     <div className="container flex max-w-6xl items-center">
@@ -32,12 +35,12 @@ const SiteNav = () => {
         </NavigationMenuList>
       </NavigationMenu>
     </div>
-  );
-};
+  )
+}
 
 const SiteNavItem = ({ title, href, icon }: NavItem) => {
-  const isActive = useActiveNav(href);
-  const Icon = icon;
+  const isActive = useActiveNav(href)
+  const Icon = icon
   return (
     <NavigationMenuItem>
       <Link href={href} legacyBehavior passHref>
@@ -45,7 +48,7 @@ const SiteNavItem = ({ title, href, icon }: NavItem) => {
           className={cn(
             navigationMenuTriggerStyle(),
             isActive && "bg-accent",
-            "gap-2 text-lg",
+            "gap-2 text-[15px]"
           )}
         >
           <Icon />
@@ -53,7 +56,7 @@ const SiteNavItem = ({ title, href, icon }: NavItem) => {
         </NavigationMenuLink>
       </Link>
     </NavigationMenuItem>
-  );
-};
+  )
+}
 
-export default SiteNav;
+export default SiteNav
