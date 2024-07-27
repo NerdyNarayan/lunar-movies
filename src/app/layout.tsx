@@ -2,7 +2,7 @@ import "@/styles/globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { GeistSans } from "geist/font/sans";
 import { type Metadata } from "next";
-import SiteNav from "@/components/site-nav";
+import SiteHeader from "@/components/header/site-header";
 
 export const metadata: Metadata = {
   title: "Create T3 App",
@@ -22,6 +22,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <SiteHeader />
           {children}{" "}
         </ThemeProvider>
       </body>

@@ -61,5 +61,5 @@ const trending={
   icon: IoMdTrendingUp
 }
 export const navItems={
-  items:[home,movies,tvShows,anime,people,trending] 
+  items:[home,movies,tvShows,anime,people,trending] as NavItem[]
 }

@@ -1,7 +1,7 @@
 "use client";
 
 import { useActiveNav } from "@/hooks/useActiveNav";
-import { type NavItem, navItems } from "../config/site";
+import { type NavItem, navItems } from "../../config/site";
 import { GiEclipseFlare } from "react-icons/gi";
 import {
   NavigationMenu,
@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/navigation-menu";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
-import ThemeToggle from "./theme-toggle";
+import ThemeToggle from "../theme-toggle";
 const SiteNav = () => {
   return (
     <div className="container flex max-w-6xl items-center">
@@ -45,7 +45,7 @@ const SiteNavItem = ({ title, href, icon }: NavItem) => {
           className={cn(
             navigationMenuTriggerStyle(),
             isActive && "bg-accent",
-            "gap-2",
+            "gap-2 text-lg",
           )}
         >
           <Icon />
