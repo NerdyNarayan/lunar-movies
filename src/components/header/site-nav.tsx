@@ -14,7 +14,6 @@ import {
 } from "@/components/ui/navigation-menu"
 
 import { navItems, type NavItem } from "../../config/site"
-import ThemeToggle from "../theme-toggle"
 
 const SiteNav = () => {
   return (

@@ -1,20 +1,21 @@
-"use client";
+"use client"
+
+import Link from "next/link"
+import { GiHamburgerMenu } from "react-icons/gi"
+
+import { navItems, type NavItem } from "@/config/site"
+import { cn } from "@/lib/utils"
+import { useActiveNav } from "@/hooks/useActiveNav"
 import {
   Drawer,
-  DrawerClose,
   DrawerContent,
   DrawerDescription,
-  DrawerFooter,
   DrawerHeader,
   DrawerTitle,
   DrawerTrigger,
-} from "@/components/ui/drawer";
-import { GiHamburgerMenu } from "react-icons/gi";
-import { type NavItem, navItems } from "@/config/site";
-import { Button } from "../ui/button";
-import { cn } from "@/lib/utils";
-import { useActiveNav } from "@/hooks/useActiveNav";
-import Link from "next/link";
+} from "@/components/ui/drawer"
+
+import { Button } from "../ui/button"
 
 const SiteMenu = () => {
   return (
@@ -41,18 +42,18 @@ const SiteMenu = () => {
         ))}
       </DrawerContent>
     </Drawer>
-  );
-};
+  )
+}
 const SiteMenuItem = ({ title, href, icon }: NavItem) => {
-  const Icon = icon;
-  const isActive = useActiveNav(href);
+  const Icon = icon
+  const isActive = useActiveNav(href)
   return (
     <Link href={href} passHref>
       <Button
         variant={"ghost"}
         className={cn(
           isActive && "bg-accent",
-          "flex w-full flex-col items-start justify-start gap-3 space-x-4 font-semibold text-primary",
+          "flex w-full flex-col items-start justify-start gap-3 space-x-4 font-semibold text-primary"
         )}
       >
         <div className="flex items-center justify-center gap-3">
@@ -61,6 +62,6 @@ const SiteMenuItem = ({ title, href, icon }: NavItem) => {
         </div>
       </Button>
     </Link>
-  );
-};
-export default SiteMenu;
+  )
+}
+export default SiteMenu
